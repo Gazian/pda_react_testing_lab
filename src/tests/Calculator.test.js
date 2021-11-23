@@ -57,5 +57,31 @@ describe('Calculator', () => {
     expect(runningTotal.text()).toEqual('15');
   })
 
+  it('should divide two numbers and get the correct answer', () => {
+    const button2 = container.find('#number2');
+    const button1 = container.find('#number1');
+    const button7 = container.find('#number7');
+    const divide = container.find('#operator-divide');
+    const equals = container.find('#operator-equals');
+    button2.simulate('click');
+    button1.simulate('click');
+    divide.simulate('click');
+    button7.simulate('click');
+    equals.simulate('click');
+    const runningTotal = container.find('#running-total');
+    expect(runningTotal.text()).toEqual('3');
+  })
+
+  it('should concatenate multiple button clicks', () => {
+    const button2 = container.find('#number2');
+    const button1 = container.find('#number1');
+    const button7 = container.find('#number7');
+    button2.simulate('click');
+    button1.simulate('click');
+    button7.simulate('click');
+    const runningTotal = container.find('#running-total');
+    expect(runningTotal.text()).toEqual('217');
+  })
+
 })
 
