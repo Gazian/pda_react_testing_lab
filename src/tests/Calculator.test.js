@@ -31,7 +31,7 @@ describe('Calculator', () => {
     expect(runningTotal.text()).toEqual('5');
   })
 
-  it('should subtract two numbers and get the correct answer', () => {
+  it('should carry out subtraction with two numbers and get the correct answer', () => {
     const button7 = container.find('#number7');
     const button4 = container.find('#number4');
     const subtract = container.find('#operator-subtract');
