@@ -84,14 +84,42 @@ describe('Calculator', () => {
   })
 
   it('should chain multiple operations together', () => {
+    const button9 = container.find('#number9');
+    const button6 = container.find('#number6');
     const button2 = container.find('#number2');
+    const button3 = container.find('#number3');
     const button1 = container.find('#number1');
-    const button7 = container.find('#number7');
+    const button0 = container.find('#number0');
+    const add = container.find('#operator_add');
+    const multiply = container.find('#operator-multiply');
+    const divide = container.find('#operator-divide');
+    const subtract = container.find('#operator-subtract');
+    button9.simulate('click');
+    add.simulate('click');
+    button6.simulate('click');
+    multiply.simulate('click');
     button2.simulate('click');
+    divide.simulate('click');
+    button3.simulate('click');
+    subtract.simulate('click');
     button1.simulate('click');
-    button7.simulate('click');
+    button0.simulate('click');
+    add.simulate('click');
     const runningTotal = container.find('#running-total');
-    expect(runningTotal.text()).toEqual('217');
+    expect(runningTotal.text()).toEqual('0');
+  })
+
+  it('should clear the running total', () => {
+    const button6 = container.find('#number6');
+    const multiply = container.find('#operator-multiply');
+    const button7 = container.find('#number7');
+    const clear = container.find('#clear');
+    button6.simulate('click');
+    multiply.simulate('click');
+    button7.simulate('click');
+    clear.simulate('click');
+    const runningTotal = container.find('#running-total');
+    expect(runningTotal.text()).toEqual('0');
   })
 
 })
