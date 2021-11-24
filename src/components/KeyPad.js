@@ -19,6 +19,10 @@ function KeyPad(props) {
     props.handleDecimal();
   }
 
+  const handleDivisionByZero = () => {
+    props.handleDivisionByZero();
+  }
+
   return (
     <div className="buttons">
         <div className="one">
